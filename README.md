@@ -1,7 +1,7 @@
 # OPTICAT
 This is an implementation of OPTICAT (Optimization of Parameters Through Instance-Specific Configuration and Advantage Training), a configurator based on reinforcement learning for instance-specific algorithm configuration.
 
-The data (instances, scenarios, arguments, wrapper) used for our experiments can be found [here](TPDP)
+The data (instances, scenarios, arguments, wrapper) used for our experiments can be found [here](https://github.com/EliasSchede/RL4ACData)
 
 
 ## Installation
@@ -27,8 +27,6 @@ python RLS/main.py --scenario_file <path_to_your_scenario> --arg_file <path_to_y
 + `scenario_file`: Specify the scenario file path
 + `arg_file`: File with other parameters 
 
-Examples of how to run OPTICAT can be found here: [here](XXX)
-
 
 #### Scenario
 The scenario file should contain the following arguments:
@@ -53,9 +51,6 @@ To run the target algorithm, a wrapper is needed that, given the configuration, 
 + `wrapper_mod_name`: Path to the wrapper file. The wrapper file will be imported by OPTICAT.
 + `wrapper_class_name`: The class in wrapper_mod_name that should be called by OPTICAT to generate the command for the target algorithm.
 + `memory_limit`: Memory limit for a target algorithm run
-
-# todo add example for quality with quality match
-
 - `par`: PAR penalty score to apply when configuring for runtime.
 - `quality_penalty`: The penalty to be applied in case a target algorithm run does not yield any costs when configuring for costs.
 
@@ -91,14 +86,6 @@ By default, the training script also provides configurations for the training an
 python RLS/run_productions.py --scenario_file <path_to_your_scenario> --arg_file <path_to_your_argument_file>
 ```
 
-
-
-
-Example:
-python RLS/main.py --scenario_file "/Users/Elias/Desktop/PhD Code/rl4ac/input/scenarios/rastrigin_example/scenario.txt" --file "/Users/Elias/Desktop/PhD Code/rl4ac/input/scenarios/rastrigin_example/args.txt" --quality_match "output:\s*\d+(\.\d+)?" --quality_extract "(\d+\.\d+)" --feature_free True
-
-
-python RLS/run_productions.py --scenario_file "/Users/Elias/Desktop/PhD Code/rl4ac/input/scenarios/rastrigin_example/scenario.txt" --file "/Users/Elias/Desktop/PhD Code/rl4ac/input/scenarios/rastrigin_example/args.txt" --feature_free True
 
 
 
